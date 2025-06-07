@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kelime_app/pages/home_page.dart';
 
 class AppColors {
   static const Color iconRengi = (Colors.grey);

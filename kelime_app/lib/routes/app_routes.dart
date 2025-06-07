@@ -8,7 +8,6 @@ import 'package:kelime_app/pages/kelime_ekle.dart';
 import 'package:kelime_app/pages/kelimelerim_page.dart';
 import 'package:kelime_app/pages/quiz_page.dart';
 import 'package:kelime_app/pages/statistics_page.dart';
-import 'package:kelime_app/pages/testebasla_page.dart';
 import 'package:kelime_app/pages/wordle_page.dart';
 
 class AppRoutes {
@@ -28,7 +27,6 @@ class AppRoutes {
     "/LoginPage": (context) => LoginPage(),
     "/SignupPage": (context) => SignupPage(),
     "/QuizPage": (context) => QuizPage(),
-    "/TestBaslaPage": (context) => TestGiris(),
     "/ForgotPassword": (context) => ForgotPassword(),
     "/Ayarlar": (context) => AyarlarPage(),
     "/KelimeEkle": (context) => KelimeEkle(),

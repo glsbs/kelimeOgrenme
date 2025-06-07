@@ -1,6 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:math';
 import 'package:kelime_app/models/user_word_data.dart';
 import 'package:kelime_app/models/word_model.dart';
 import 'package:intl/intl.dart';

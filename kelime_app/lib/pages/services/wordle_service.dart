@@ -1,9 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:kelime_app/models/word_model.dart';
-import 'package:kelime_app/models/user_word_data.dart';
 
 class WordleService {
   final FirebaseDatabase _db = FirebaseDatabase.instance;
