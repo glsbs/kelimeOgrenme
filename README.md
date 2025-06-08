@@ -8,9 +8,9 @@ Bu uygulama, kullanıcıların kelime dağarcığını eğlenceli ve etkileşiml
 
 | İsim              | Okul No      | Rol / Katkı                                  | E-Posta                   |
 |-------------------|--------------|----------------------------------------------|---------------------------|
-| 👩 Selin KINCAL   | 232803059   | Veritabanı,Scrum Table,README.md,SonarQube   | selinkincal48@gmail.com |
+| 👩 Selin KINCAL   | 232803059   | Veritabanı,Scrum Table,README.md   | selinkincal48@gmail.com |
 | 👩 Gülsu BEŞE     | 232803026   | UI/UX Tasarımı, Oyun mantığı, İstatistik modülü, Kelime Ekleme modülü, Firebase entegrasyonu | gulsubese@gmail.com |
-| 👩 Sena Nur Bahçevan | 232803057 | Test ve hata ayıklama , Dökümantasyon | senabahcevan1@gmail.com |
+| 👩 Sena Nur BAHÇEVAN | 232803057 | Test ve hata ayıklama , Dökümantasyon | senabahcevan1@gmail.com |
 
 
 ## 📌 Özellikler
