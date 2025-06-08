@@ -37,30 +37,6 @@ Bu uygulama, kullanıcıların kelime dağarcığını eğlenceli ve etkileşiml
 - 💙 VS Code
 
 
-## 📷 Uygulama Görselleri
-
-### 🎮 Wordle Ekranı
-![Wordle](screenshots/wordle.jpg)
-
-### ➕ Kelime Ekleme Ekranı
-![Kelime Ekle](screenshots/kelime-ekle.jpg)
-
-### 📚 Kelimelerim Sayfası
-![Kelimelerim](screenshots/kelimelerim.jpg)
-
-### 🏠 Ana Sayfa
-![Anasayfa](screenshots/anasayfa.jpg)
-
-### ⚙️ Ayarlar Sayfası
-![Ayarlar](screenshots/ayarlar.jpg)
-
-### 📊 İstatistik Modülü
-![İstatistik](screenshots/istatistik.jpg)
-
-### 📝 Quiz Modülü
-![Quiz](screenshots/quiz.jpg)
-
-
 
 ## 🚀 Kurulum ve Çalıştırma
 
