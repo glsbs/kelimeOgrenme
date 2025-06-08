@@ -1,10 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 
 class UserDatabaseService {
-  // final _db = FirebaseDatabase.instance.refFromURL("https://kelimeogrenme-c9afb-default-rtdb.europe-west1.firebasedatabase.app/");
-  final _db =
-      FirebaseDatabase.instance
-          .ref(); // <-- Varsayılan veritabanının köküne referans
+  final _db = FirebaseDatabase.instance.ref();
 
   Future<void> saveUserToDataBase({
     required String uid,
@@ -12,7 +9,6 @@ class UserDatabaseService {
     required String userName,
   }) async {
     try {
-      print("RTDB kaydetme işlemi başlatıldı for UID: $uid"); // <-- Yeni log
       await _db.child("users").child(uid).set({
         "email": email,
         "totalLearned": 0,
@@ -40,4 +36,6 @@ class UserDatabaseService {
     }
     return null;
   }
+}
+
 }
