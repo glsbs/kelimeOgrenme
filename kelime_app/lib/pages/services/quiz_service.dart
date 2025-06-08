@@ -14,6 +14,7 @@ class QuizService {
 
     final userRef = _db.child("users/${user.uid}");
 
+    final addedWordsSnap = await userRef.child("userWords/words").get();
     final userWordDataSnapshot =
         await userRef.child("userWords/correctWords").get();
     final wordDataSnapshot = await _db.child("words").get();
@@ -22,18 +23,22 @@ class QuizService {
     int newWordCount =
         int.tryParse(newWordCountSnapshot.value.toString()) ?? 10;
 
-    final Map<dynamic, dynamic> allWords = wordDataSnapshot.value as Map;
+    final Map<dynamic, dynamic> allWords = {};
+    if (wordDataSnapshot.exists) {
+      allWords.addAll(wordDataSnapshot.value as Map);
+    }
+    if (addedWordsSnap.exists) {
+      allWords.addAll(addedWordsSnap.value as Map);
+    }
+
     final Map<dynamic, dynamic> userWordDataMap =
         userWordDataSnapshot.value as Map? ?? {};
-    if (allWords == null) {
-      print("Kelimeler alınamadı");
-      return [];
-    }
-    //word objelerine çevirir
+
     List<Word> allWordsMap =
         allWords.entries
             .map((entry) => Word.fromMap(entry.key, entry.value))
             .toList();
+
     Map<String, UserWordData> userWordData = {};
 
     if (userWordDataMap != null) {
@@ -42,7 +47,6 @@ class QuizService {
           key.toString(),
           value,
         );
-        ;
       });
     }
 
@@ -53,10 +57,8 @@ class QuizService {
       if (userWord == null || !userWord.isKnown) {
         eligibleWordIds.add(word.id);
       }
-      // Eğer hiç çözülmemişse veya 6 tekrar tamamlanmamışsa eklemek için
     }
 
-    //Uygun kelimeleri rastgele karıştır
     eligibleWordIds.shuffle();
     List<Word> selectedWords =
         eligibleWordIds
@@ -110,17 +112,19 @@ class QuizService {
     int correctCount = 0;
     List<String> correctDates = [];
 
+    if (!isCorrect) {
+      if (snapshot.exists) {
+        await userRef.remove();
+      }
+      return;
+    }
+
     if (snapshot.exists) {
       final data = snapshot.value as Map<dynamic, dynamic>;
       correctCount = int.tryParse(data["correctCount"]?.toString() ?? "0") ?? 0;
 
       final List<dynamic>? saveDates = data["correctDates"] as List?;
       correctDates = saveDates?.map((e) => e.toString()).toList() ?? [];
-
-      if (!isCorrect) {
-        await userRef.remove();
-        return;
-      }
     }
     if (!correctDates.contains(todayStr)) {
       correctDates.add(todayStr);
@@ -151,4 +155,6 @@ class QuizService {
       "lastCorrectDate": todayStr,
     });
   }
+}
+
 }
