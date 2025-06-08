@@ -26,7 +26,7 @@ class UserWordData {
     return {
       'correctCount': correctCount,
       'isKnown': isKnown,
-      'lastCorrectDates': correctDates,
+      'correctDates': correctDates,
       if (lastCorrectDate != null) 'lastCorrectDate': lastCorrectDate,
     };
   }
